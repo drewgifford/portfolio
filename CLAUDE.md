@@ -22,6 +22,7 @@ There are no tests.
 Single-page SvelteKit portfolio site. There is one route (`src/routes/+page.svelte`) that contains all page content. The layout (`src/routes/+layout.svelte`) only sets the favicon and imports global CSS.
 
 **Design system** — terminal/hacker aesthetic. Custom Tailwind v4 tokens are defined in `src/routes/layout.css`:
+
 - `terminal-bg` / `terminal-surface` — background layers
 - `terminal-green` — primary accent (`#00ff41`)
 - `terminal-amber` — secondary accent / prompts (`#f0a500`)
@@ -30,6 +31,7 @@ Single-page SvelteKit portfolio site. There is one route (`src/routes/+page.svel
 - Font: Space Mono (monospace)
 
 **Component library** (`src/lib/components/`) — primitive reusable components. All use Svelte 5 `$props()` runes and `Snippet` for children:
+
 - `Card` — base bordered container (`fill`, `padding` props)
 - `Window` — `Card` with a filename header bar (wraps `Card`)
 - `Accordion` — collapsible section with amber heading text
