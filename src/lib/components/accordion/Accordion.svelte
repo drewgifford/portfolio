@@ -30,8 +30,8 @@
 		<Icon icon="famicons:caret-down-outline" class="inline-block transition-all" />
 	</div>
 </button>
-{#if open}
+<div class:hidden={!open}>
 	<p>
 		{@render children?.()}
 	</p>
-{/if}
+</div>

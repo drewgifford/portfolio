@@ -29,7 +29,7 @@
 
 			<!-- Education -->
 			<section id="education" class="mx-auto flex w-full flex-col gap-4 pt-4">
-				<Command command="cat education.log" />
+				<Command command="cat education.md" />
 
 				<Window header="education.md">
 					<div class="flex items-start justify-between gap-4">

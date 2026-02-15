@@ -33,22 +33,21 @@
 	</button>
 
 	<!-- Body -->
-	{#if open}
-		<div class="flex flex-col gap-3">
-			<ul class="flex flex-col gap-1 text-sm leading-relaxed text-terminal-muted">
-				{#each experience.bullets as bullet (bullet)}
-					<li class="flex gap-2">
-						<span class="shrink-0 font-bold text-terminal-amber">-</span>
-						<span>{bullet}</span>
-					</li>
-				{/each}
-			</ul>
 
-			<div class="flex flex-wrap gap-2 text-sm">
-				{#each experience.tech as { icon, text } (text)}
-					<Skill {icon} {text} />
-				{/each}
-			</div>
+	<div class="flex flex-col gap-3" class:hidden={!open}>
+		<ul class="flex flex-col gap-1 text-sm leading-relaxed text-terminal-muted">
+			{#each experience.bullets as bullet (bullet)}
+				<li class="flex gap-2">
+					<span class="shrink-0 font-bold text-terminal-amber">-</span>
+					<span>{bullet}</span>
+				</li>
+			{/each}
+		</ul>
+
+		<div class="flex flex-wrap gap-2 text-sm">
+			{#each experience.tech as { icon, text } (text)}
+				<Skill {icon} {text} />
+			{/each}
 		</div>
-	{/if}
+	</div>
 </div>
