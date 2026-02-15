@@ -15,18 +15,18 @@
     {#if project.link}
       <p class="text-lg text-terminal-green">
         <Link href={project.link}>
-          # BALLOTLINE, LLC
+          # {project.name}
         </Link>
       </p>
     {:else}
       <p class="text-lg text-terminal-green">
-        # LTElections
+        # {project.name}
       </p>
     {/if}
 
-    {#each project.description as section (section.label) }
-      <Accordion text={"## " + section.label} open={section.open ?? false}>
-        <span>{section.text}</span>
+    {#each project.description as section, i (section.label) }
+      <Accordion text={"## " + section.label} open={i === 0}>
+        <span class="text-sm">{section.text}</span>
       </Accordion>
     {/each}
 

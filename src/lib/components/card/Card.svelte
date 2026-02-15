@@ -10,6 +10,6 @@
 
 </script>
 
-<div class="overflow-hidden rounded border border-terminal-border" class:bg-terminal-surface={fill} class:p-5={padding}>
+<div class="overflow-hidden rounded border border-terminal-border shadow-md" class:bg-terminal-surface={fill} class:p-5={padding}>
   {@render children?.()}
 </div>

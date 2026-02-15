@@ -15,7 +15,8 @@
 	<!-- Toggle button -->
 	<button
 		onclick={() => (open = !open)}
-		class="w-full text-left cursor-pointer hover:brightness-75 transition-all"
+		class="w-full text-left cursor-pointer hover:brightness-75 transition-all mb-1"
+    class:mb-1.5={open}
 	>
 		<div class="flex items-center justify-between gap-4">
 			<span class="font-bold text-lg text-terminal-green"># {experience.company}</span>
@@ -31,7 +32,7 @@
 
 	<!-- Body -->
 	{#if open}
-		<div class="mt-3 flex flex-col gap-3">
+		<div class="flex flex-col gap-3">
 			<ul class="flex flex-col gap-1 text-terminal-muted text-sm leading-relaxed">
 				{#each experience.bullets as bullet (bullet)}
 					<li class="flex gap-2">

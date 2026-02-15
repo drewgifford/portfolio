@@ -3,11 +3,11 @@ import type { SkillIcon } from "$lib/type/skill";
 export interface ProjectDescription {
   label: string;
   text: string;
-  open?: boolean;
 }
 
 export interface Project {
 	header: string;
+  name: string;
   link?: string;
   description: ProjectDescription[];
   tech: SkillIcon[];
@@ -16,13 +16,13 @@ export interface Project {
 export const projects: Project[] = [
 
   {
-    header: "BALLOTLINE, LLC",
+    header: "BALLOTLINE.md",
+    name: "BALLOTLINE, LLC",
     link: "https://ballotline.com",
     description: [
       {
         label: "what is it?",
-        text: "BALLOTLINE, LLC is a news organization, polling aggregate, and data hub for politics in the United States.",
-        open: true
+        text: "BALLOTLINE, LLC is a news organization, polling aggregate, and data hub for politics in the United States."
       },
       {
         label: "what did you do?",
@@ -43,13 +43,13 @@ export const projects: Project[] = [
     ]
   },
   {
-    header: "CFB Roster Generator",
+    header: "cfb-roster-generator.md",
+    name: "CFB Roster Generator",
     link: "https://cfb.drewgifford.com",
     description: [
       {
         label: "what is it?",
-        text: "CFB Roster Generator is a tool to create custom rosters for dynasty mode in the game EA College Football 26. Players are generated with traits based off of real ingame traits, archetypes, abilities, and much more.",
-        open: true
+        text: "CFB Roster Generator is a tool to create custom rosters for dynasty mode in the game EA College Football 26. Players are generated with traits based off of real ingame traits, archetypes, abilities, and much more."
       },
       {
         label: "what did you do?",
@@ -66,7 +66,8 @@ export const projects: Project[] = [
     ]
   },
   {
-    header: "LTElections",
+    header: "ltelections.md",
+    name: "LTElections",
     description: [
       {
         label: "what is it?",
