@@ -1,0 +1,12 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --font-mono: 'Space Mono', 'Courier New', monospace;
+  --color-terminal-bg: #0d1117;
+  --color-terminal-surface: #161b22;
+  --color-terminal-green: #00ff41;
+  --color-terminal-amber: #f0a500;
+  --color-terminal-muted: #8b949e;
+  --color-terminal-border: #30363d;
+}
