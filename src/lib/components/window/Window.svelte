@@ -15,7 +15,7 @@
 	<div class="flex items-center gap-2 border-b border-terminal-border bg-terminal-bg px-4 py-2">
 		<span class="ml-2 text-xs text-terminal-muted">{header}</span>
 	</div>
-	<div class="p-5">
+	<div class="p-5 text-sm">
 		{@render children?.()}
 	</div>
 </Card>

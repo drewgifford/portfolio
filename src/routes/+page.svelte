@@ -13,6 +13,10 @@
 	import { projects } from '$lib/constants/projects';
 </script>
 
+<svelte:head>
+	<title>Drew Gifford</title>
+</svelte:head>
+
 <SiteContainer>
 	<div class="mt-8 flex min-h-screen items-start justify-between gap-4">
 		<TableOfContents />
@@ -31,7 +35,7 @@
 					<div class="flex items-start justify-between gap-4">
 						<div>
 							<p class="text-lg font-bold text-terminal-green"># {education.school}</p>
-							<p class="mt-0.5 text-terminal-amber">## {education.degree}</p>
+							<p class="mt-0.5 text-sm text-terminal-amber">## {education.degree}</p>
 						</div>
 						<span class="shrink-0 text-sm text-terminal-muted">{education.years}</span>
 					</div>
@@ -66,7 +70,7 @@
 			<section id="contact">
 				<Command command="which contact" />
 				<Card>
-					<div class="p-4">
+					<div class="p-4 text-sm">
 						<p class="text-lg font-bold text-terminal-green"># Contact</p>
 						<p>
 							Want to get in touch? The best way to reach me is via email. Feel free to connect on

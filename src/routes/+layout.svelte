@@ -1,10 +1,10 @@
 <script lang="ts">
 	import './layout.css';
-	import favicon from '$lib/assets/favicon.svg';
+	import favicon from '$lib/assets/favicon.jpg';
 	import SiteContainer from '$lib/components/container/SiteContainer.svelte';
 	import Icon from '@iconify/svelte';
 	import Link from '$lib/components/link/Link.svelte';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
 	import type { NavHref } from '$lib/type/string';
 
@@ -25,7 +25,7 @@
 		</a>
 		<div class="flex gap-6 text-sm text-terminal-muted">
 			{#each navLinks as link (link.href)}
-				{@const isActive = $page.url.pathname === link.href}
+				{@const isActive = page.url.pathname === link.href}
 				<a
 					href={resolve(link.href)}
 					class="flex items-center gap-1 transition-colors {isActive

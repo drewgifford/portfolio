@@ -18,6 +18,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>My Cats / Drew Gifford</title>
+</svelte:head>
+
 {#if selectedImage}
 	<div
 		class="fixed top-0 left-0 z-10 flex h-full w-full flex-col items-center justify-center bg-terminal-bg/75"
