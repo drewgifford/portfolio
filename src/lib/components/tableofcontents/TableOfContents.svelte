@@ -1,43 +1,34 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { SvelteMap } from "svelte/reactivity";
-	import Window from "../window/Window.svelte";
+  import Window from "../window/Window.svelte";
 
-  type Section = { id: string; label: string };
+  const sections = ["about", "education", "experience", "projects", "contact"];
 
-  const sections: Section[] = [
-    { id: "hero",     label: "about"  },
-    { id: "experience", label: "experience"},
-    { id: "projects", label: "projects"  },
-    { id: "contact",  label: "contact" },
-  ];
-
-  let activeId = $state<string>("hero");
+  let activeSection = $state(sections[0]);
 
   onMount(() => {
-    const observers: IntersectionObserver[] = [];
-    const intersecting = new SvelteMap<string, boolean>();
+    const update = () => {
+      const nearBottom =
+        window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 80;
 
-    for (const section of sections) {
-      const el = document.getElementById(section.id);
-      if (!el) continue;
+      if (nearBottom) {
+        activeSection = sections[sections.length - 1];
+        return;
+      }
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          for (const entry of entries) {
-            intersecting.set(section.id, entry.isIntersecting);
-          }
-          const active = sections.find((s) => intersecting.get(s.id));
-          if (active) activeId = active.id;
-        },
-        { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
-      );
+      const trigger = window.scrollY + window.innerHeight * 0.15;
+      let current = sections.at(0);
+      for (const id of sections) {
+        const el = document.getElementById(id);
+        if (el && el.offsetTop <= trigger) current = id;
+      }
 
-      observer.observe(el);
-      observers.push(observer);
-    }
+      if (current) activeSection = current;
+    };
 
-    return () => { for (const obs of observers) obs.disconnect(); };
+    window.addEventListener("scroll", update, { passive: true });
+    update();
+    return () => window.removeEventListener("scroll", update);
   });
 </script>
 
@@ -45,20 +36,21 @@
 
   <Window header="nav.md">
 
-    <div class="flex flex-col gap-1">
-      {#each sections as section (section.id)}
+    <div class="mt-2 flex flex-col gap-1">
+      {#each sections as section (section)}
+        {@const isActive = activeSection === section}
         <a
-          href="#{section.id}"
+          href="#{section}"
           class="flex items-center gap-1.5 text-sm rounded transition-colors
-            {activeId === section.id ? 'text-terminal-amber' : 'text-terminal-muted hover:text-terminal-green'}"
+            {isActive ? 'text-terminal-amber' : 'text-terminal-muted hover:brightness-75'}"
         >
-          <span class="w-3 shrink-0 text-terminal-amber">
-            {activeId === section.id ? ">" : ""}
+          <span class="w-3 shrink-0">
+            {isActive ? ">" : ""}
           </span>
-          <span>{section.label}</span>
+          <span>{section}</span>
         </a>
       {/each}
     </div>
-  
+
   </Window>
 </aside>

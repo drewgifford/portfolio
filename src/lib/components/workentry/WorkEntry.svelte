@@ -18,9 +18,9 @@
 		class="w-full text-left cursor-pointer hover:brightness-75 transition-all mb-1"
     class:mb-1.5={open}
 	>
-		<div class="flex items-center justify-between gap-4">
-			<span class="font-bold text-lg text-terminal-green"># {experience.company}</span>
-			<span class="text-terminal-muted shrink-0">{experience.dateRange}</span>
+		<div class="md:flex items-center justify-between gap-4">
+			<p class="font-bold text-lg text-terminal-green"># {experience.company}</p>
+			<p class="text-terminal-muted shrink-0">{experience.dateRange}</p>
 		</div>
 		<div class="flex items-center justify-between gap-4 mt-0.5">
 			<span class="text-terminal-amber text-sm">## {experience.role} <span class="text-terminal-muted">/  {experience.location}</span></span>

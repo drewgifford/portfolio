@@ -71,7 +71,7 @@ export const projects: Project[] = [
     description: [
       {
         label: "what is it?",
-        text: "LTElections was a realtime election reporting, analysis, and prediction tool that was active for the 2024 U.S. general election."
+        text: "LTElections was a realtime election reporting, analysis, and prediction tool that was active for the 2024 U.S. general election. Its success led to the creation of BALLOTLINE."
       },
       {
         label: "what did you do?",

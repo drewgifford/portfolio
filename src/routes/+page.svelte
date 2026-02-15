@@ -1,7 +1,9 @@
 <script lang="ts">
+	import Card from "$lib/components/card/Card.svelte";
 	import Command from "$lib/components/command/Command.svelte";
 	import SiteContainer from "$lib/components/container/SiteContainer.svelte";
 	import HomeHero from "$lib/components/hero/HomeHero.svelte";
+	import Link from "$lib/components/link/Link.svelte";
 	import ProjectEntry from "$lib/components/projectentry/ProjectEntry.svelte";
 	import TableOfContents from "$lib/components/tableofcontents/TableOfContents.svelte";
 	import Window from "$lib/components/window/Window.svelte";
@@ -16,7 +18,7 @@
     <TableOfContents/>
     <main class="min-h-screen flex flex-col gap-12 flex-1">
       <!-- Hero -->
-      <section id="hero" class="mx-auto pt-4">
+      <section id="about" class="mx-auto pt-4">
         <Command command="cat README.md"/>
         <HomeHero/>
       </section>
@@ -58,6 +60,21 @@
         {#each projects as project (project.header)}
           <ProjectEntry {project}/>
         {/each}
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+
+        <Command command="which contact"/>
+        <Card>
+          <div class="p-4">
+            <p class="text-lg font-bold text-terminal-green"># Contact</p>
+            <p>Want to get in touch? The best way to reach me is via email. Feel free to connect on LinkedIn as well, if you so please.</p>
+            <p class="mt-4">Email: <Link href="mailto:drew@drewgifford.com">drew@drewgifford.com</Link></p>
+            <p class="mt-4">LinkedIn: <Link href="https://www.linkedin.com/in/drew-gifford-0417a91b7/">Drew Gifford</Link></p>
+          </div>
+        </Card>
+
       </section>
     </main>
   </div>
