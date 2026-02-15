@@ -13,8 +13,8 @@
     }
 </script>
 
-<button onclick={toggle} class="text-terminal-amber mt-2 text-left cursor-pointer flex gap-2 transition-all hover:brightness-75" class:mb-0.5={open}>
-    <span>
+<button onclick={toggle} class="text-terminal-amber mt-2 text-left cursor-pointer flex gap-2 transition-all hover:brightness-75" class:-mb-0.5={!open}>
+    <span class="text-sm">
         {text}
     </span>
 

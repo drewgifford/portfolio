@@ -3,8 +3,8 @@
 
 @theme {
   --font-mono: 'Space Mono', 'Courier New', monospace;
-  --color-terminal-bg: #0d1117;
-  --color-terminal-surface: #161b22;
+  --color-terminal-bg:rgb(6, 8, 11);
+  --color-terminal-surface:rgb(15, 18, 23);
   --color-terminal-green: #00ff41;
   --color-terminal-amber: #f0a500;
   --color-terminal-muted: #8b949e;
