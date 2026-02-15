@@ -1,31 +1,12 @@
 <script lang="ts">
-	import Card from "$lib/components/card/Card.svelte";
+	import Accordion from "$lib/components/accordion/Accordion.svelte";
+import Card from "$lib/components/card/Card.svelte";
 	import Command from "$lib/components/command/Command.svelte";
+	import Link from "$lib/components/link/Link.svelte";
 	import Skill from "$lib/components/skill/Skill.svelte";
 	import Window from "$lib/components/window/Window.svelte";
 	import { getAge } from "$lib/util/age";
 	import Icon from "@iconify/svelte";
-
-	const projects = [
-		{
-			name: 'project-alpha',
-			description: 'A placeholder project description. Replace with your real project details.',
-			tags: ['TypeScript', 'SvelteKit', 'PostgreSQL'],
-			url: '#'
-		},
-		{
-			name: 'project-beta',
-			description: 'Another placeholder project. What interesting things have you built?',
-			tags: ['Node.js', 'Docker', 'REST API'],
-			url: '#'
-		},
-		{
-			name: 'project-gamma',
-			description: 'Your third featured project goes here. Show off your best work.',
-			tags: ['Svelte', 'TypeScript', 'Git'],
-			url: '#'
-		}
-	];
 
 	const skills = {
 		frontend: ['TypeScript', 'Svelte', 'SvelteKit'],
@@ -50,13 +31,13 @@
 	</nav>
 
 	<!-- Hero -->
-	<section id="hero" class="mx-auto max-w-4xl px-6 py-16">
-		<Command command="cat README.md"/>
+<section id="hero" class="mx-auto max-w-4xl px-6 py-8">
+	<Command command="cat README.md"/>
 
 
     <Card fill={false} padding={true}>
       <h1 class="text-3xl font-bold text-terminal-green">DREW GIFFORD</h1>
-      <p class="mt-2 text-terminal-muted">
+      <p class="mt-2 text-terminal-amber">
         <span id="job-title">Full Stack Engineer</span> / <span id="location">Cincinnati, OH</span>
       </p>
 
@@ -92,87 +73,74 @@
 	</section>
 
 	<!-- Projects -->
-	<section id="projects" class="mx-auto max-w-4xl px-6 py-8">
+	<section id="projects" class="mx-auto max-w-4xl px-6 py-8 flex flex-col gap-4">
 		<p class="mb-4 text-terminal-muted">
 			<span class="text-terminal-amber">$</span> ls ./projects
 		</p>
 		<Window header="BALLOTLINE.md">
-      <div class="leading-relaxed text-terminal-muted flex flex-col gap-1">
+			<div class="leading-relaxed text-terminal-muted flex flex-col gap-1">
 
-        <p class="text-terminal-muted/75">--what is it?</p>
-        <p>
-          <span class="font-bold">BALLOTLINE, LLC</span> is a news organization, polling aggregate, and data hub for politics in the United States.
-        </p>
+				<p class="text-lg text-terminal-green">
+					<Link href="https://ballotline.com">
+						# BALLOTLINE, LLC
+					</Link>
+				</p>
 
-        <p class="text-terminal-muted/75 mt-2">--what did you do?</p>
-        <p>
-          I am the current <span class="font-bold">CEO and lead engineer of BALLOTLINE</span>. I am responsible for project management, frontend and backend development of the site and services. This project was entirely worked on as a hobby outside of my day job.
-        </p>
+				<Accordion text="### what is it?" open>
+					<span class="font-bold">BALLOTLINE, LLC</span> is a news organization, polling aggregate, and data hub for politics in the United States.
+				</Accordion>
 
-        <p class="text-terminal-muted/75 mt-2">--what is the impact?</p>
-        <p>
-          BALLOTLINE has delivered realtime election results and live analysis to thousands of concurrent users for U.S. elections in an accessible manner. Additionally, we keep track of polling averages for various categories using our own automated poll collection and parsing pipeline.
-        </p>
-        
-        <p class="text-terminal-muted/75 mt-2">--what is your tech stack?</p>
+				<Accordion text="### what did you do?">
+					I am the current <span class="font-bold">CEO and lead engineer of BALLOTLINE</span>. I am responsible for project management, frontend and backend development of the site and services. This project was entirely worked on as a hobby outside of my day job.
+				</Accordion>
 
-        <div class="flex gap-2 text-sm">
-          <Skill icon="ri:svelte-fill" text="SvelteKit"/>
-          <Skill icon="simple-icons:bun" text="Bun"/>
-          <Skill icon="simple-icons:hono" text="Hono"/>
-          <Skill icon="simple-icons:express" text="Express"/>
-          <Skill icon="akar-icons:postgresql-fill" text="PostgreSQL"/>
-          <Skill icon="simple-icons:redis" text="Redis"/>
-          <Skill icon="mingcute:drizzle-fill" text="Drizzle ORM"/>
-        </div>
-      </div>
-    </Window>
+				<Accordion text="### what is the impact?">
+					BALLOTLINE has delivered realtime election results and live analysis to thousands of concurrent users for U.S. elections in an accessible manner. Additionally, we keep track of polling averages for various categories using our own automated poll collection and parsing pipeline.
+				</Accordion>
 
-    <Window header="cfb-roster-generator.md">
-      <div class="leading-relaxed text-terminal-muted flex flex-col gap-1">
+				<Accordion text="### what is your tech stack?" open>
+					<div class="flex gap-2 text-sm">
+						<Skill icon="ri:svelte-fill" text="SvelteKit"/>
+						<Skill icon="simple-icons:bun" text="Bun"/>
+						<Skill icon="simple-icons:hono" text="Hono"/>
+						<Skill icon="simple-icons:express" text="Express"/>
+						<Skill icon="akar-icons:postgresql-fill" text="PostgreSQL"/>
+						<Skill icon="simple-icons:redis" text="Redis"/>
+						<Skill icon="mingcute:drizzle-fill" text="Drizzle ORM"/>
+					</div>
+				</Accordion>
+			</div>
+    	</Window>
 
-        <p class="text-terminal-muted/75">--what is it?</p>
-        <p>
-          <span class="font-bold">BALLOTLINE, LLC</span> is a news organization, polling aggregate, and data hub for politics in the United States.
-        </p>
+		<Window header="cfb-roster-generator.md">
+		<div class="leading-relaxed text-terminal-muted flex flex-col gap-1">
 
-        <p class="text-terminal-muted/75 mt-2">--what did you do?</p>
-        <p>
-          I am the current <span class="font-bold">CEO and lead engineer of BALLOTLINE</span>. I am responsible for project management, frontend and backend development of the site and services. This project was entirely worked on as a hobby outside of my day job.
-        </p>
+			<p class="text-lg text-terminal-green">
+				<Link href="https://cfb.drewgifford.com">
+					# CFB Roster Generator
+				</Link>
+			</p>
 
-        <p class="text-terminal-muted/75 mt-2">--what is the impact?</p>
-        <p>
-          BALLOTLINE has delivered realtime election results and live analysis to thousands of concurrent users for U.S. elections in an accessible manner. Additionally, we keep track of polling averages for various categories using our own automated poll collection and parsing pipeline.
-        </p>
-        
-        <p class="text-terminal-muted/75 mt-2">--what is your tech stack?</p>
+			<Accordion text="### what is it?" open>
+				<span class="font-bold">CFB Roster Generator</span> is a tool to create custom rosters for dynasty mode in the game EA College Football 26. Players are generated with traits based off of real ingame traits, archetypes, abilities, and much more.
+			</Accordion>
 
-        <div class="flex gap-2 text-sm">
-          <Skill icon="ri:svelte-fill" text="SvelteKit"/>
-        </div>
-      </div>
-    </Window>
-	</section>
+			<Accordion text="### what did you do?">
+				I was the sole developer of this project. It's a static site for the most part, but I also had to develop a Firefox browser extension to allow for easy importing into EA's Team Builder application.
+			</Accordion>
 
-	<!-- Projects -->
-	<section id="projects" class="mx-auto max-w-4xl px-6 py-8">
-		<p class="mb-4 text-terminal-muted">
-			<span class="text-terminal-amber">$</span> ls ./projects/
-		</p>
-		<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-			{#each projects as project (project.name)}
+			<Accordion text="### what did you do?">
+				CFB 26 players in the dynasty gamemode now have an option to customize their team beyond default roster presets. The regular team customizer is not user-friendly at all, and is difficult to work with. I shared my tool on Reddit, where it got a lot of positive feedback and is seeing decent usage among the community.
+			</Accordion>
 
-        <Window header={project.name}>
-          
-          <h3 class="mb-2 font-bold text-terminal-green">{project.name}</h3>
-
-          <p class="text-terminal-muted">{project.description}</p>
-
-
-        </Window>
-			{/each}
+			<Accordion text="### what is your tech stack?" open>
+				<div class="flex gap-2 text-sm">
+					<Skill icon="ri:svelte-fill" text="SvelteKit"/>
+					<Skill icon="simple-icons:typescript" text="TypeScript"/>
+				</div>
+			</Accordion>
 		</div>
+		</Window>
 	</section>
 
 	<!-- Skills -->

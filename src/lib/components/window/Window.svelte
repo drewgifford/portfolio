@@ -3,7 +3,7 @@
 	import Card from "../card/Card.svelte";
 
 
-  const { header, children }: {
+  const { header, children  }: {
     header: string,
     children?: Snippet
   } = $props();
