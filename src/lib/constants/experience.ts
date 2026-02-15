@@ -19,7 +19,7 @@ export const experiences: WorkExperience[] = [
 		bullets: [
 			"I've had the delight of working for a high-velocity startup close to home right out of college; the experience I've gained from Pantomath has been invaluable.",
 			"Pantomath was my first exposure to AWS and backend applications at scale, and I've been in the group responsible for maintaining nearly every one of Pantomath's many backend services.",
-			"I've been a key contributor on Pantomath's connectors and site reliability teams, ensuring that what they see on Pantomath reflects the assets on their data stack"
+			"I've been a key contributor on Pantomath's connectors and site reliability teams, ensuring that what customers see on Pantomath reflects the assets on their data stack"
 		],
 		tech: [
 			{
