@@ -6,7 +6,7 @@
 </script>
 
 <a
-	class="flex items-center gap-2 underline hover:brightness-75"
+	class="flex items-center gap-2 underline transition-all hover:brightness-75"
 	{href}
 	target="_blank"
 	rel="external nofollow"

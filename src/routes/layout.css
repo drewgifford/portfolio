@@ -10,3 +10,7 @@
 	--color-terminal-muted: #8b949e;
 	--color-terminal-border: #30363d;
 }
+
+* {
+	transition-duration: 50ms;
+}

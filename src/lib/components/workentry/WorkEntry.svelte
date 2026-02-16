@@ -43,11 +43,11 @@
 				</li>
 			{/each}
 		</ul>
+	</div>
 
-		<div class="flex flex-wrap gap-2 text-sm">
-			{#each experience.tech as { icon, text } (text)}
-				<Skill {icon} {text} />
-			{/each}
-		</div>
+	<div class="mt-3 flex flex-wrap gap-2 text-sm">
+		{#each experience.tech as { icon, text } (text)}
+			<Skill {icon} {text} />
+		{/each}
 	</div>
 </div>

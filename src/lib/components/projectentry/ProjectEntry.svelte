@@ -28,12 +28,10 @@
 			</Accordion>
 		{/each}
 
-		<Accordion text="## what is your tech stack?" open>
-			<div class="mt-2 flex flex-wrap gap-2 text-sm">
-				{#each project.tech as skill (skill.text)}
-					<Skill icon={skill.icon} text={skill.text} />
-				{/each}
-			</div>
-		</Accordion>
+		<div class="mt-2 flex flex-wrap gap-2 text-sm">
+			{#each project.tech as skill (skill.text)}
+				<Skill icon={skill.icon} text={skill.text} />
+			{/each}
+		</div>
 	</div>
 </Window>
