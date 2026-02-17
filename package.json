@@ -14,7 +14,7 @@
 		"lint:fix": "eslint --fix",
 		"format": "prettier --check .",
 		"format:fix": "prettier --write .",
-		"deploy": "bun run lint && bun run build && bun x gh-pages -d build -t"
+		"deploy": "bun run lint && bun run build && bun x gh-pages -d build -t --cname drewgifford.com"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^2.0.2",

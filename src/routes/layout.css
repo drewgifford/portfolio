@@ -2,7 +2,7 @@
 @plugin '@tailwindcss/typography';
 
 @theme {
-	--font-mono: 'Space Mono', 'Courier New', monospace;
+	--font-mono: 'Roboto Mono', 'Courier New', monospace;
 	--color-terminal-bg: rgb(6, 8, 11);
 	--color-terminal-surface: rgb(15, 18, 23);
 	--color-terminal-green: #00ff41;
