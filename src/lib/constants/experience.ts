@@ -10,18 +10,14 @@ export interface WorkExperience {
 }
 
 export const experiences: WorkExperience[] = [
-  {
-    company: 'Decision Desk HQ',
-    role: 'Software Engineer',
-    dateRange: 'Apr 2026 - present',
-    location: 'Remote - Washington, DC',
-    bullets: [
-
-    ],
-    tech: [
-
-    ]
-  },
+	{
+		company: 'Decision Desk HQ',
+		role: 'Software Engineer',
+		dateRange: 'Apr 2026 - present',
+		location: 'Remote - Washington, DC',
+		bullets: [],
+		tech: []
+	},
 	{
 		company: 'Pantomath',
 		role: 'Full-Stack Engineer',

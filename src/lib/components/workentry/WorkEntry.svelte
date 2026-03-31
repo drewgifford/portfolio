@@ -5,7 +5,7 @@
 
 	let { experience, open = false }: { experience: WorkExperience; open?: boolean } = $props();
 
-  const canOpen = $derived(!!experience.bullets.length)
+	const canOpen = $derived(!!experience.bullets.length);
 </script>
 
 <div class="relative pb-8 pl-8">
@@ -15,17 +15,17 @@
 	></div>
 
 	<!-- Toggle button -->
-   {#if canOpen}
-    <button
-      onclick={() => (open = !open)}
-      class="mb-1 w-full cursor-pointer text-left transition-all hover:brightness-75"
-      class:mb-1.5={open}
-    >
-      <WorkEntryInner {experience} {open} {canOpen}/>
-    </button>
-  {:else}
-    <WorkEntryInner {experience} {open} {canOpen}/>
-  {/if}
+	{#if canOpen}
+		<button
+			onclick={() => (open = !open)}
+			class="mb-1 w-full cursor-pointer text-left transition-all hover:brightness-75"
+			class:mb-1.5={open}
+		>
+			<WorkEntryInner {experience} {open} {canOpen} />
+		</button>
+	{:else}
+		<WorkEntryInner {experience} {open} {canOpen} />
+	{/if}
 
 	<!-- Body -->
 
