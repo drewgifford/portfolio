@@ -25,7 +25,7 @@ export const projects: Project[] = [
 			},
 			{
 				label: 'what did you do?',
-				text: 'I am the current CEO and lead engineer of BALLOTLINE. I am responsible for project management, frontend and backend development of the site and services. This project was entirely worked on as a hobby outside of my day job.'
+				text: 'I was the CEO and lead engineer of BALLOTLINE. I was responsible for project management, frontend and backend development of the site and services. This project was entirely worked on as a hobby outside of my day job.'
 			},
 			{
 				label: 'what is the impact?',

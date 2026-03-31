@@ -10,11 +10,22 @@ export interface WorkExperience {
 }
 
 export const experiences: WorkExperience[] = [
-	// Add your work experience entries here
+  {
+    company: 'Decision Desk HQ',
+    role: 'Software Engineer',
+    dateRange: 'Apr 2026 - present',
+    location: 'Remote - Washington, DC',
+    bullets: [
+
+    ],
+    tech: [
+
+    ]
+  },
 	{
 		company: 'Pantomath',
 		role: 'Full-Stack Engineer',
-		dateRange: 'Apr 2025 - present',
+		dateRange: 'Apr 2025 - Mar 2026',
 		location: 'Hybrid - Cincinnati, OH',
 		bullets: [
 			"I've had the delight of working for a high-velocity startup close to home right out of college; the experience I've gained from Pantomath has been invaluable.",
